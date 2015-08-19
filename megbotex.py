@@ -3,7 +3,7 @@
 Author: Megan Ruthven
 Date: August 18, 2015
 How to use the MegBot summary example:
-python megbotex.py [username] [password] [messageID]
+python megbotex.py [facebook email] [facebook password] [messageID]
 '''
 
 import sys 
@@ -38,12 +38,20 @@ try:
 	username = sys.argv[1]
 	password = sys.argv[2]
 	message  = sys.argv[3]
+        with open('config.json') as in_json:
+                data = json.load(in_json);
+                print data
+                stop = stop + [word.lower().strip() for word in data['addedStops']];
+                myset = set(stop);
+                stop = list(myset);
         regex = re.compile('[%s]' % re.escape(string.punctuation))
         mb = MegBot(username,password);
 
 except IndexError:
 	print "Usage: python get_friends.py <username> <password> <output file>"
 	sys.exit()
+
+print stop
 
 def next_set(pastMessages):
     #checks to see if there are incoming messages. If there are, returns the new ones.
@@ -116,7 +124,6 @@ while True:
         #if the max amount of messages or a @megbot call have come in, summarize the past maxMessages amount of chat and return the top 5 words.
         if (newMess) > maxMessages or any( _megbot_call in s for s in currCheck[:len(n)]):
             currCheck = currCheck[:maxMessages];
-            currCheck = map(lambda phrase: pattern.sub("", phrase),  currCheck);
             ou = highest_words(currCheck);
             mb.send_message(_intro+ou);
             newMess = 0;

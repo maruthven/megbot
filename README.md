@@ -22,4 +22,4 @@ Feel free to send a pull request for added functionality to MegBot or any use ca
 PM's are private. Therefore, you should have full consent of everyone in your group to opporate MegBot. Please be considerate of others.
 
 ## Maintainer
-Megan Ruthven ([@maruthven](https://twitter.com/maruthven))
+[Megan Ruthven](http://maruthven.com/) ([@maruthven](https://twitter.com/maruthven))

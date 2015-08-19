@@ -10,14 +10,16 @@ The example, megbotex.py, summarizes the past 50 messages the group said. It doe
 
 ## Usage
 To use the example:
+
 python megbotex.py [facebook email] [facebook password] [message ID]
+
 The information in your chat is stored in an array of strings, and therefore does not persist in this example. Please be aware of privacy concerns if you decide to change this feature.
 
 ## Contributions
 Feel free to send a pull request for added functionality to MegBot or any use cases you want to share. 
 
 ## Disclaimer
-PM's are private, and therefore, you should have full consent of everyone in your group to opporate. Please be considerate of others
+PM's are private. Therefore, you should have full consent of everyone in your group to opporate MegBot. Please be considerate of others.
 
 ## Maintainer
 Megan Ruthven ([@maruthven](https://twitter.com/maruthven))

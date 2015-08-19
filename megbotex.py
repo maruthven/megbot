@@ -59,10 +59,11 @@ def next_set(pastMessages):
         for out in outM:
             if _intro in out:
                 print "found my message";
-            elif len(pastMessages) == 0 or not any(out in s for s in pastMessages[:min(len(pastMessages), 4)]):
+            elif len(pastMessages) == 0 or not any(out == s for s in pastMessages[:min(len(pastMessages), 4)]):
                 t.append(out);
             else:
                 print "was not an original message"
+                print "but this was original" + ' '.join(t);
                 end = True;
                 break;
 
@@ -81,7 +82,7 @@ def highest_words(mess):
     inWords = re.sub('[^0-9a-zA-Z]+', ' ', regex.sub('', oneStr)).strip();
 
     totWords = ' '.join([word for word in inWords.split() if word not in stop]);
-
+    print totWords;
     wordCount = Counter(totWords.split());
     print wordCount;
     toGoOut = ', '.join([letter for letter, count in wordCount.most_common(5)]);

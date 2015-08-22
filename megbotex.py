@@ -48,7 +48,7 @@ try:
         mb = MegBot(username,password);
 
 except IndexError:
-	print "Usage: python get_friends.py <username> <password> <output file>"
+	print "Usage: python megbotex.py <facebook email> <facebook password> <message ID>"
 	sys.exit()
 
 print stop

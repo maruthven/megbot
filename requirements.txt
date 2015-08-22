@@ -1,0 +1,4 @@
+nltk
+selenium
+requests
+splinter

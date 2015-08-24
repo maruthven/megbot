@@ -12,7 +12,6 @@ import re
 import string
 from collections import Counter
 from nltk.corpus import stopwords
-from stemming.porter2 import stem
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -27,7 +26,17 @@ from urllib2 import URLError
 from megbot import MegBot
 
 maxMessages = 50;
-stop = stopwords.words('english')
+# attempt to load stopwords
+try:
+        stop = stopwords.words('english')
+# no stopwords downloaded
+except:
+        # download stopwords  
+        import nltk
+        print 'select the package "stopwords" from the GUI to download stopwords for megbot'
+        nltk.download()
+        stop = stopwords.words('english')
+
 regex = re.compile('[%s]' % re.escape(string.punctuation))
 _intro = "Top words: ";
 _megbot_call = "@megbot";

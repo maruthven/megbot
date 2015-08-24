@@ -8,6 +8,22 @@ The example, megbotex.py, summarizes the past 50 messages the group said. It doe
 
 ![](https://scontent.fsnc1-1.fna.fbcdn.net/hphotos-xfp1/v/t1.0-9/11898559_10206907510503212_5645712742133939266_n.jpg?oh=4c25ee4333985aed381cc4b5ac132a2a&oe=567CF17E)
 
+## Installation
+
+1. Install [PhantomJS](http://phantomjs.org/download.html). Note:
+It is available via
+```
+brew install phantomjs
+```
+and 
+```
+port install phantomjs
+```
+2. Create a python env if you want, or use your own and then
+```
+pip install -r requirements.txt
+```
+
 ## Usage
 To use the example:
 

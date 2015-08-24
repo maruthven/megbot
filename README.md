@@ -14,7 +14,7 @@ To use the example:
 python megbotex.py [facebook email] [facebook password] [message ID]
 
 The message ID is located here:
-![](https://lh3.googleusercontent.com/brtlx42txPgdHXeg5p_r66ACFLDA2diN9G7Kz_SLbc6zLiCiaoyeyxPx4XpvzEpKyYuvb_kOdXJQKFmiK3psUXa0_ywTbqIuyvRL3CqcVrN46mBWc5ItFJMrX9UHzsVghIT9qefanAT94xOhcvcbdKJHMfPbb8NRa1casKTleU1SmfwqY47r5uLNwLmvoeuoVmpj2yl2xQMXPBxvhnTrUMJLf6LmrMxAsXWXVTGZ8pgWShVv91BHUuKbfG8PmZ8N6X-4WT6vEAoSjqdOCu-wt-k1ml13B7RlV6y9DhEGfyLsIWEdnfQnyMHR4WsU8zDqwe57NSDT7X_HmYsdeTcBdXgp2SLZanyo_UgY4HeA66usPa2f5Na1UCXeOka1BrDjQPQfl130cXjqsZNGIn4E06pxJ4PPeXFzXXGCs3OLgmeGLTTrYaOoYsIVHaxpEt3X7ldesB8vv1ibpHtbahVyoXR_FhTmlXolf-xqiiFETgfz_7b4b1bm-zwlrdWlUGfrR035fw=w1276-h68-no_)
+![](http://i.imgur.com/vmuNWDC.png)
 
 The information in your chat is stored in an array of strings, and therefore does not persist in this example. Please be aware of privacy concerns if you decide to change this feature.
 

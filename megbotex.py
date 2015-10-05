@@ -27,40 +27,31 @@ from megbot import MegBot
 
 maxMessages = 50;
 # attempt to load stopwords
-try:
-        stop = stopwords.words('english')
-# no stopwords downloaded
-except:
-        # download stopwords  
-        import nltk
-        print 'select the package "stopwords" from the GUI to download stopwords for megbot'
-        nltk.download()
-        stop = stopwords.words('english')
+stop = stopwords.words('english')
 
-regex = re.compile('[%s]' % re.escape(string.punctuation))
+regex = re.compile('[%s]' % re.escape(string.punctuation));
 _intro = "Top words: ";
 _megbot_call = "@megbot";
 _at_key = "@";
-pattern = re.compile("\\b("+_intro+"|"+_megbot_call+")\\W", re.I)
+pattern = re.compile("\\b("+_intro+"|"+_megbot_call+")\\W", re.I);
 
 try:
-	username = sys.argv[1]
-	password = sys.argv[2]
-	message  = sys.argv[3]
+	username = sys.argv[1];
+	password = sys.argv[2];
+	message  = sys.argv[3];
         with open('config.json') as in_json:
                 data = json.load(in_json);
-                print data
+                print data;
                 stop = stop + [word.lower().strip() for word in data['addedStops']];
-                myset = set(stop);
-                stop = list(myset);
-        regex = re.compile('[%s]' % re.escape(string.punctuation))
+                stop = list(set(stop));
+        regex = re.compile('[%s]' % re.escape(string.punctuation));
         mb = MegBot(username,password);
 
 except IndexError:
-	print "Usage: python megbotex.py <facebook email> <facebook password> <message ID>"
-	sys.exit()
+	print "Usage: python megbotex.py <facebook email> <facebook password> <message ID>";
+	sys.exit();
 
-print stop
+print stop;
 
 def next_set(pastMessages):
     #checks to see if there are incoming messages. If there are, returns the new ones.
@@ -72,14 +63,14 @@ def next_set(pastMessages):
     while len(newMessage) < maxMessages:
         outM = mb.read_messages();
         print outM;
-        t = []
+        t = [];
         for out in outM:
             if _intro in out:
                 print "found my message";
             elif len(pastMessages) == 0 or not any(out == s for s in pastMessages[:min(len(pastMessages), 4)]):
                 t.append(out);
             else:
-                print "was not an original message"
+                print "was not an original message";
                 print "but this was original" + ' '.join(t);
                 end = True;
                 break;
@@ -147,11 +138,11 @@ while True:
         
         time.sleep(20);
     except (URLError, selenium.common.exceptions.StaleElementReferenceException):
-	print "reconnecting......"
+        print "reconnecting......";
 	# Try to reconnect 
 	time.sleep(5)
 	try:
-	       	login()
+	       	login();
 	except:
-	       	continue
+	       	continue;
 
